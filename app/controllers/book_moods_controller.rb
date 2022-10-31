@@ -1,0 +1,2 @@
+class BookMoodsController < ApplicationController
+end
