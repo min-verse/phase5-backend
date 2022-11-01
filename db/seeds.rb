@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts "🌱 Seeding genres..."
 # Genres
 fiction = Genre.create(genre_name:"fiction")
 contemporary = Genre.create(genre_name:"contemporary")
@@ -34,6 +35,7 @@ graphic_novel = Genre.create(genre_name:"graphic novel")
 poetry = Genre.create(genre_name:"poetry")
 short_stories = Genre.create(genre_name:"short stories")
 
+puts "🌱 Seeding moods..."
 # Moods
 adventurous = Mood.create(mood_name:"adventurous")
 challenging = Mood.create(mood_name:"challenging")
@@ -50,7 +52,9 @@ relaxing = Mood.create(mood_name:"relaxing")
 sad = Mood.create(mood_name:"sad")
 tense = Mood.create(mood_name:"tense")
 
+puts "🌱 Seeding books..."
 # Books
+puts "🌱 Seeding book 1..."
 # id 1
 starts_with_us = Book.create(
     title:'It Starts With Us',
@@ -240,6 +244,7 @@ BookMood.create(book:atlas_paradox,mood:adventurous)
 BookMood.create(book:atlas_paradox,mood:dark)
 BookMood.create(book:atlas_paradox,mood:mysterious)
 
+puts "🌱 Seeding book 10..."
 # id 10
 if_villains = Book.create(
     title:'If We Were Villains',
@@ -475,6 +480,7 @@ BookGenre.create(book:carrie_soto, genre:sports)
 BookMood.create(book:carrie_soto,mood:emotional)
 BookMood.create(book:carrie_soto,mood:inspiring)
 
+puts "🌱 Seeding book 20..."
 # id 20
 kiss_curse = Book.create(
     title:'The Kiss Curse',
@@ -669,6 +675,7 @@ BookMood.create(book:persepolis,mood:emotional)
 BookMood.create(book:persepolis,mood:funny)
 BookMood.create(book:persepolis,mood:reflective)
 
+puts "🌱 Seeding book 30..."
 # id 30
 persepolis_two = Book.create(
     title:'Persepolis 2: The Story of a Return',
@@ -862,6 +869,7 @@ BookGenre.create(book:beautiful_country, genre:memoir)
 BookMood.create(book:beautiful_country,mood:emotional)
 BookMood.create(book:beautiful_country,mood:reflective)
 
+puts "🌱 Seeding book 40..."
 # id 40
 on_earth = Book.create(
     title:'On Earth We\'re Briefly Gorgeous',
@@ -1061,6 +1069,7 @@ BookMood.create(book:sula,mood:emotional)
 BookMood.create(book:sula,mood:reflective)
 BookMood.create(book:sula,mood:sad)
 
+puts "🌱 Seeding book 50..."
 # id 50
 brief_body = Book.create(
     title:'A History of My Brief Body',
