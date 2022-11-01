@@ -9,4 +9,6 @@ class Book < ApplicationRecord
     has_many :users, through: :readings
 
     has_many :posts, dependent: :destroy
+
+    validates :ISBN, uniqueness: {case_sensitive: false}
 end
