@@ -1,5 +1,5 @@
 class BookSerializer < ActiveModel::Serializer
-    attributes :id, :title, :tagline, :author, :synopsis, :total_pages, :cover, :year_published
+    attributes :id, :title, :author, :description, :ISBN, :total_pages, :cover, :year_published, :publisher
 
     has_many :book_moods, dependent: :destroy
     has_many :moods, through: :book_moods
