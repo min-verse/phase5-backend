@@ -2,6 +2,9 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   respond_to :json
+  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
+  rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
+  rescue_from JWT::ExpiredSignature, with: :expired_token_response
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
@@ -62,11 +65,24 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
   private
 
+  def render_unprocessable_entity_response(invalid)
+    render json: { errors: invalid.record.errors.full_messages }, status: :unprocessable_entity
+  end
+
+  def render_not_found_response
+    render json: { error: "No user associated with this email. Please use a valid user email." }, status: :unprocessable_entity
+  end
+
+  def expired_token_response
+    render json: {error: "Token has expired"}, status: :unauthorized
+  end
+
   def respond_with(resource, _opts = {})
     if resource.persisted?
       render json: {
         status: {code: 200, message: 'Signed up sucessfully.'},
-        data: UserSerializer.new(resource).serializable_hash[:data][:attributes]
+        # data: UserSerializer.new(resource).serializable_hash[:data][:attributes]
+        data: UserSerializer.new(resource)
       }
     else
       render json: {
@@ -83,7 +99,7 @@ class Users::SessionsController < Devise::SessionsController
   def respond_with(resource, _opts = {})
     render json: {
       status: {code: 200, message: 'Logged in sucessfully.'},
-      data: UserSerializer.new(resource).serializable_hash[:data][:attributes]
+      data: UserSerializer.new(resource)
     }, status: :ok
   end
 

@@ -1,8 +1,6 @@
 class PrivateController < ApplicationController
   before_action :authenticate_user!
-  def test
-    render json: {
-      message: "This is a private message for #{current_user.email} you should only see if you've got a correct token"
-    }
+  def verify
+    render json: current_user, serializer: UserSerializer
   end
 end

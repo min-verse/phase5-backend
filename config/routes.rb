@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
-  resources :book_moods
-  resources :moods
-  resources :book_genres
-  resources :genres
-  resources :friendships
-  resources :comments
-  resources :posts
-  resources :readings
-  resources :books
-  get 'private/test'
+  resources :book_moods, only: [:create, :index, :show]
+  resources :moods, only: [:create, :index, :show]
+  resources :book_genres, only: [:create, :index, :show]
+  resources :genres, only: [:create, :index, :show]
+  resources :friendships, only: [:create, :destroy, :update]
+  resources :comments, only: [:create, :destroy]
+  resources :posts, only: [:create, :destroy]
+  resources :readings, only: [:create, :destroy]
+  resources :books, only: [:index, :show]
+  get 'private/verify'
   get 'current_user/index', to: 'current_user#index'
   devise_for :users, path: '', path_names: {
     sign_in: 'login',
