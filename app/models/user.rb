@@ -24,4 +24,27 @@ class User < ApplicationRecord
                 uniqueness: {case_sensitive: false},
                 format: {with: VALID_EMAIL_REGEX}
     validates :password, presence: true
+
+  def self.search(param)
+      param.strip!
+      results = (username_matches(param) + email_matches(param)).uniq
+      return nil unless results
+      results
+  end
+
+  def self.username_matches(param)
+      self.matches("username", param)
+  end
+
+  def self.email_matches(param)
+      self.matches("email", param)
+  end
+
+  def self.matches(field_name, param)
+      where("#{field_name} like ?", "%#{param}%")
+  end
+
+  def except_current_user(users)
+    users.reject{|user| user.id == self.id }
+  end
 end

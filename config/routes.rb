@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :friendships, only: [:create, :destroy, :update]
   resources :comments, only: [:create, :destroy]
   resources :posts, only: [:create, :destroy]
-  resources :readings, only: [:create, :destroy]
+  resources :readings, only: [:create, :show, :index, :destroy]
   resources :books, only: [:index, :show]
   get 'private/verify'
   get 'current_user/index', to: 'current_user#index'
