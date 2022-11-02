@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :email, :username, :pending, :friends, :fav_genres, :fav_moods, :created_at
+  attributes :id, :email, :username, :pendings, :friends, :genres, :moods, :created_at
 
   has_many :readings, dependent: :destroy
   has_many :books, through: :readings
@@ -8,7 +8,7 @@ class UserSerializer < ActiveModel::Serializer
 
   has_many :comments, dependent: :destroy
 
-  def pending
+  def pendings
     Friendship.where(friend_id:self.object.id).where(status:"pending").map do |item|
       {friend: item.user, books:item.user.books}
     end
@@ -24,7 +24,7 @@ class UserSerializer < ActiveModel::Serializer
     part_one + part_two
   end
 
-  def fav_genres
+  def genres
     arr = []
     self.object.books.map do |item|
       arr += item.genres
@@ -33,7 +33,7 @@ class UserSerializer < ActiveModel::Serializer
     genre_array.each_with_object(Hash.new(0)){|key,hash| hash[key] += 1}
   end
 
-  def fav_moods
+  def moods
     arr = []
     self.object.books.map do |item|
       arr += item.moods
