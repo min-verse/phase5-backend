@@ -13,6 +13,20 @@ class ReadingsController < ApplicationController
         end
     end
 
+    def update_pages_read
+        @reading = Reading.where(user_id:current_user.id).where(book_id:params[:id]).first
+        if @reading.status == "reading"
+            if(params[:pageCount].to_i < 0 || params[:pageCount].to_i >Book.find(params[:id]).total_pages)
+                render json: {error: "Entered an invalid number of pages"}
+            else
+                @reading.update!(pages_read:params[:pageCount])
+                render json: current_user.readings,status: :ok
+            end
+        else
+            render json: {error: "Must add book to reading first"}, status: :unprocessable_entity
+        end
+    end
+
     def index
         render json: Reading.all
     end
