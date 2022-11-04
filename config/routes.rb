@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :genres, only: [:create, :index, :show]
   resources :friendships, only: [:create, :destroy, :update]
   resources :comments, only: [:create, :destroy]
-  resources :posts, only: [:create, :destroy]
+  resources :posts, only: [:index, :show, :create, :destroy]
   resources :readings, only: [:create, :show, :index, :destroy]
   resources :books, only: [:index, :show]
   get 'private/verify'
@@ -21,5 +21,9 @@ Rails.application.routes.draw do
   }
 
   patch 'readings', to: 'readings#update'
+  post 'search_readers', to: 'friendships#search_readers'
+  post 'search_books', to: 'books#search_books'
+  post 'example_search', to: 'books#example_search'
+  post 'reader_page', to: 'friendships#reader_render'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

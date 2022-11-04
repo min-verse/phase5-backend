@@ -16,10 +16,22 @@ class UserSerializer < ActiveModel::Serializer
 
   def friends
     part_one = Friendship.where(user_id:self.object.id).where(status:"accepted").map do |item|
-      {friend: item.friend, books:item.friend.books}
+      if(item.friend.books.length && item.friend.books.length > 0)
+        random_index = rand(item.friend.books.length)
+        current_book = item.friend.books[random_index]
+      else
+        current_book = "Not reading anything at the moment"
+      end
+      {friend: item.friend, books:item.friend.books, current_book:current_book}
     end
     part_two = Friendship.where(friend_id:self.object.id).where(status:"accepted").map do |item|
-      {friend: item.user, books:item.user.books}
+      if(item.friend.books.length && item.friend.books.length > 0)
+        random_index = rand(item.friend.books.length)
+        current_book = item.friend.books[random_index]
+      else
+        current_book = "Not reading anything at the moment"
+      end
+      {friend: item.user, books:item.user.books, current_book:current_book}
     end
     part_one + part_two
   end

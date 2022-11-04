@@ -17,17 +17,23 @@ class FriendshipsController < ApplicationController
         render json: new_accept
     end
 
+    def reader_render
+        puts params
+        reader_find = User.find_by!(id:params[:reader])
+        render json: reader_find, status: :ok
+    end
+
     def destroy
     end
 
-    def search_users
-        if params[:friend_search].present?
-            @friends = User.search(params[:friend_search])
+    def search_readers
+        if params[:reader_search].present?
+            @friends = User.search(params[:reader_search])
             @friends = current_user.except_current_user(@friends)
             if @friends.length() > 0
                 render json: @friends
             else
-                render json: {error: "No user found"}
+                render json: {error: "No such fellow reader found"}
             end
         else
             render json: {error: "Search field must not be blank to search"}

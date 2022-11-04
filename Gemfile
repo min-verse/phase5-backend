@@ -19,6 +19,8 @@ gem 'devise'
 gem 'devise-jwt'
 gem 'fast_jsonapi'
 gem "active_model_serializers"
+gem "net-http"
+gem "uri"
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

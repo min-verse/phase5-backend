@@ -248,10 +248,11 @@
 #     But in their fourth and final year, good-natured rivalries turn ugly, and on opening night real violence invades the students\' world of make-believe. In the morning, the fourth-years find themselves facing their very own tragedy, and their greatest acting challenge yet: convincing the police, each other, and themselves that they are innocent.',
 #     total_pages:368,
 #     year_published:2017,
-#     ISBN:'9781250855091',
+#     ISBN:'9781250095282',
 #     cover:'https://cdn.thestorygraph.com/sy2cutxgtjigdith214msxfm3mx3',
 #     publisher:'Flatiron Books'
 # )
+
 # BookGenre.create(book:if_villains, genre:fiction)
 # BookGenre.create(book:if_villains, genre:contemporary)
 # BookGenre.create(book:if_villains, genre:lgbt)
@@ -1081,5 +1082,91 @@
 # BookMood.create(book:brief_body,mood:challenging)
 # BookMood.create(book:brief_body,mood:emotional)
 # BookMood.create(book:brief_body,mood:reflective)
+
+# # id 51
+# forgetting_spells = Book.create(
+#     title:'Spells for Forgetting',
+#     author:'Adrienne Young',
+#     description:'August Salt knows he is not welcome on Saiorse, not after the night that changed everything. As a fire raged on at the Salt family orchard, Lily Morgan was found dead in the dark woods, shaking the bedrock of their tight-knit community and branding August a murderer. When he returns to bury his mother\'s ashes, he must confront the people who turned their backs on him and face the one wound from the past that has never healed--Emery. But the town has more than one reason to want August gone, and the emergence of deep betrayals and hidden promises that span generations threatens to reveal the truth behind Lily\'s death once and for all.
+
+#     Evocative and compelling, Spells for Forgetting is a vivid exploration of lost love and the unraveling of a small town and its many secrets.',
+#     total_pages:352,
+#     year_published:2022,
+#     ISBN:'9780593358511',
+#     cover:'https://cdn.thestorygraph.com/et5u4ejzvlg3zdp6gjeud1ak0joh',
+#     publisher:'Delacorte Press'
+# )
+# BookGenre.create(book:forgetting_spells, genre_id:1)
+# BookGenre.create(book:forgetting_spells, genre_id:8)
+# BookGenre.create(book:forgetting_spells, genre_id:11)
+# BookGenre.create(book:forgetting_spells, genre_id:5)
+
+# BookMood.create(book:forgetting_spells,mood_id:2)
+# BookMood.create(book:forgetting_spells,mood_id:4)
+# BookMood.create(book:forgetting_spells,mood_id:11)
+
+# forgetting_spells_post1 = Post.create(book:forgetting_spells,user_id:5,title:'Left Breathless',content:'This book took my breath away! That haunted, ominous atmosphere of Saiorse literally made me shiver! That place rooted in folklore and tradition with its tight- knitted community who believe in superstitions and realistic portraits of the islanders, the way they interpret all those signs as omens truly picked my interest.
+# The plot about a murder\'s suspect\'s return to the island, getting branded with another crime he didn\'t commit and his unresolved love story is everything I asked for!
+
+# Intense, dark, whodunnit mystery with unforeseeable twists with heart wrenching romance captivate you from the beginning! You don\'t want to put the book down! The tension keeps building as you keep fidgeting in your seat, cursing some of the characters, rooting for August and Emery, flipping pages faster, hyperventilating.')
+# forgetting_spells_post2 = Post.create(book:forgetting_spells,user_id:8,title:'Intriguing Island Mystery',content:'An island full of secrets and mysteries. A murder years ago that still haunts the town with a love that could be deadly to all involved.
+
+# Emery is a well featured strong character with a will to uncover the truth about the murder of her best friend and the doubt surrounding the gossip that her own boyfriend did it. This was a really easy and quick read with a bit of suspense and tip of magic. My inner self was not satisfied with the little bit of magic that was in this book. It is more a mystery and suspense book.')
+# forgetting_spells_post3 = Post.create(book:forgetting_spells,user_id:10,title:'An Okay Whodunnit',content:'Though she always thought she\'d leave, Emery still lives on Saoirse Island running the family business. As a teenager, she and her love, August, always wanted more from their lives. But while August did leave the island, it was under suspicious circumstances. While there\'s always been folklore and magic associated with the island, it\'s never been more evident than now, just as August unexpectedly returns to the island to bury his mother. As he reunites with old friends and secret enemies, Emery and August begin to uncover deep secrets and betrayals that haunt their home and families.
+
+# I really enjoyed the author\'s writing style and the dark, atmospheric setting. The author also did an excellent job at incorporating secrets, guilt, and betrayals in a way that connected the characters and created depth in their relationships. However, the first 30% of the book was painfully slow and honestly quite boring. Almost nothing happened, and it wasn\'t until about 40% through the work that we began getting hints to the mystery and began to feel a sense of foreboding.
+# ')
+
+# forgetting_spells_comment1 = Comment.create(user_id:6, post:forgetting_spells_post1, content:'Just finished and I couldn\'t believe the ending. 🤦‍♀️ Your review nailed it!')
+# forgetting_spells_comment2 = Comment.create(user_id:8, post:forgetting_spells_post1, content:'My excitement (which was already exceptionally high) just escalated.')
+# forgetting_spells_comment3 = Comment.create(user_id:7, post:forgetting_spells_post2, content:'Same! I wanted her to dive deeper into pretty much everything- plot, setting, characters, magic')
+# forgetting_spells_comment4 = Comment.create(user_id:9, post:forgetting_spells_post2, content:'Thank you for your honesty, all I have seen is massive gushing praise for this one so it\'s nice to see balance.')
+# forgetting_spells_comment5 = Comment.create(user_id:9, post:forgetting_spells_post3, content:'Awesome review! I\'ve been looking forward to picking this one up')
+# forgetting_spells_comment6 = Comment.create(user_id:10, post:forgetting_spells_post3, content:'completely agree. every time it switched characters i couldnt even tell cause they all felt the same. Magic on the dl for no reason. like if its gonan be a magic book then actually commit to it')
+# forgetting_spells_comment7 = Comment.create(user_id:8, post:forgetting_spells_post3, content:'Had the same thought. Very boring motive and the "twist" felt like a cheat. Almost like "i don\'t want anyone to guess so I\'m going to make it THIS even though it doesn\'t make sense as to why . . . "')
+
+# Reading.create(user_id:5, book:forgetting_spells, status:'reading', pages_read:250)
+
+# # id 52
+# twilight = Book.create(
+#     title:'Twilight',
+#     author:'Stephenie Meyer',
+#     description:'Isabella Swan\'s move to Forks, a small, perpetually rainy town in Washington, could have been the most boring move she ever made. But once she meets the mysterious and alluring Edward Cullen, Isabella\'s life takes a thrilling and terrifying turn.
+
+#     Up until now, Edward has managed to keep his vampire identity a secret in the small community he lives in, but now nobody is safe, especially Isabella, the person Edward holds most dear. The lovers find themselves balanced precariously on the point of a knife -- between desire and danger.
+    
+#     Deeply romantic and extraordinarily suspenseful, Twilight captures the struggle between defying our instincts and satisfying our desires. This is a love story with bite.',
+#     total_pages:498,
+#     year_published:2005,
+#     ISBN:'9780316015844',
+#     cover:'https://cdn.thestorygraph.com/9ivelxjmykp72jsjhukz97f9e2uo',
+#     publisher:'Little, Brown Books for Young Readers'
+# )
+# BookGenre.create(book:twilight, genre_id:1)
+# BookGenre.create(book:twilight, genre_id:8)
+# BookGenre.create(book:twilight, genre_id:3)
+# BookGenre.create(book:twilight, genre_id:16)
+
+# BookMood.create(book:twilight,mood_id:1)
+# BookMood.create(book:twilight,mood_id:4)
+# BookMood.create(book:twilight,mood_id:10)
+
+# twilight_post1 = Post.create(book:twilight,user_id:9,title:'Former Twilight Fan',content:'Actual rating: 1.5 stars. Believe it or not, there are actually a few books that are worse than Twilight.
+
+# Ok, funny story. I was sitting on my couch with my husband last night finishing up Twilight. I slammed the book shut and began rubbing my temples. Then, my husband goes, "So you finally finished, huh?" "Yes. I can\'t believe I used to like this book," I said. \"Hahaha! Yeah, I remember you were on Twilight\'s balls hard.\"Yeah, yeah, yeah...')
+# twilight_post2 = Post.create(book:twilight,user_id:10,title:'A Guilty Pleasure',content:'Oh my. This book, to me, is like chocolate: a delicious, sinful, addictive indulgence which you convince yourself has beneficial qualities (zinc, calcium, keeps me quiet at that time of the month...) in order to justify your addiction.
+
+# By "beneficial qualities", I mean that it\'s reading, and since when is reading bad? :) Let me say quite clearly that I\'m a sucker for romance, especially the intense, passionate, tragic kind. I don\'t read romance novels*, though, because to me they are lacklustre - Meyer\'s book has the extra edge I need, though, a great way of keeping doom hanging over the main characters\' heads: she\'s human, he\'s a vampire.')
+# twilight_post3 = Post.create(book:twilight,user_id:6,title:'Who Will She Choose?',content:'It turns out we don\'t need Dr. John Gray to tell us that men are from Transylvania and women are from Venus. We just need to read Stephenie Meyer books. For example, from this book we learn that the millions of women who have wolfed down the Twilight series (pun intended) want men who:')
+
+# twilight_comment1 = Comment.create(user_id:5, post:twilight_post1, content:'Fabulous! I had the same experience: 5 stars my first read back in the day then recently reread and was like what.the.actual.hell?!?!? 🤣 So ewww 🤢')
+# twilight_comment2 = Comment.create(user_id:9, post:twilight_post1, content:'I actually love Twilight but this review is so funny. 😆😂')
+# twilight_comment3 = Comment.create(user_id:6, post:twilight_post2, content:'Yes girl slay. But this book i good I think')
+# twilight_comment4 = Comment.create(user_id:6, post:twilight_post2, content:'Hey just a quick question, should I watch the movie first or should I read the book first?')
+# twilight_comment5 = Comment.create(user_id:10, post:twilight_post3, content:'This book taste like apple')
+# twilight_comment6 = Comment.create(user_id:8, post:twilight_post3, content:'Uh, excuse me sir but I am a female and I would rather dive off a cliff (haha get it cuz Bella does that later) than be forced to talk about my feelings for longer than three minutes')
+# twilight_comment7 = Comment.create(user_id:9, post:twilight_post3, content:'Wow to see so many people (used to) agree with this comment is really worrying. Just because Bella likes these things doesn\'t mean everyone who likes the book')
+
+# Reading.create(user_id:5, book:twilight, status:'reading', pages_read:139)
 
 # puts "🌱 Done seeding"
