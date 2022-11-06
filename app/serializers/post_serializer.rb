@@ -7,7 +7,7 @@ class PostSerializer < ActiveModel::Serializer
     has_many :comments
 
     def user
-      self.object.user.username
+      {id:self.object.user.id, username:self.object.user.username}
     end
 
     def number_of_comments

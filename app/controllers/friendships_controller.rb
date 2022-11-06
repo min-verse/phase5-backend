@@ -5,10 +5,15 @@ class FriendshipsController < ApplicationController
         friend = User.find_by!(id: params[:id])
         new_friendship = current_user.friendships.build(friend_id:friend.id, status:'pending').save
         if new_friendship
-            render json: new_friendship, status: :ok
+            render json: current_user.friendships, status: :ok
         else
             render json: {error: "Not able to send friend request"}, status: :unprocessable_entity
         end
+    end
+
+    def example_register
+        puts params
+        render json: params
     end
 
     def update
@@ -31,7 +36,7 @@ class FriendshipsController < ApplicationController
             @friends = User.search(params[:reader_search])
             @friends = current_user.except_current_user(@friends)
             if @friends.length() > 0
-                render json: @friends
+                render json: @friends, status: :ok
             else
                 render json: {error: "No such fellow reader found"}
             end

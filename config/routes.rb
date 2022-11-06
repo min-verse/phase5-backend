@@ -26,5 +26,6 @@ Rails.application.routes.draw do
   post 'example_search', to: 'books#example_search'
   post 'reader_page', to: 'friendships#reader_render'
   post 'change_page', to: 'readings#update_pages_read'
+  post 'example_register', to: 'friendships#example_register'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

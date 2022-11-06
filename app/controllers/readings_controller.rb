@@ -34,4 +34,14 @@ class ReadingsController < ApplicationController
     def show
         render json: Reading.find_by!(id:params[:id])
     end
+
+    def destroy
+        @reading = Reading.where(user:current_user).where(book_id:params[:id]).first
+        if @reading
+            @reading.destroy
+            render json: current_user.readings, status: :ok
+        else
+            render json: {error: "No book found in #{current_user.username}'s shelf"}, status: :unprocessable_entity
+        end
+    end
 end
