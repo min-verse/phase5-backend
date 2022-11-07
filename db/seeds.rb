@@ -26,6 +26,7 @@
 # graphic_novel = Genre.create(genre_name:"graphic novel")
 # poetry = Genre.create(genre_name:"poetry")
 # short_stories = Genre.create(genre_name:"short stories")
+manga = Genre.create(genre_name:"manga")
 
 # puts "🌱 Seeding moods..."
 # # Moods
@@ -1169,25 +1170,383 @@
 
 # Reading.create(user_id:5, book:twilight, status:'reading', pages_read:139)
 
-# # id 52
-# sea_of_monsters = Book.create(
-#     title:'',
-#     author:'',
-#     description:'',
-#     total_pages:0,
-#     year_published:2005,
-#     ISBN:'',
-#     cover:'',
-#     publisher:''
-# )
-# BookGenre.create(book:sea_of_monsters, genre_id:1)
-# BookGenre.create(book:sea_of_monsters, genre_id:8)
-# BookGenre.create(book:sea_of_monsters, genre_id:2)
-# BookGenre.create(book:sea_of_monsters, genre_id:24)
+# id 52
+romance_dawn = Book.create(
+    title:'One Piece, Volume 1: Romance Dawn',
+    author:'Eiichiro Oda',
+    description:'Join Monkey D. Luffy and his swashbuckling crew in their search for the ultimate treasure, One Piece .
 
-# BookMood.create(book:sea_of_monsters,mood_id:1)
-# BookMood.create(book:sea_of_monsters,mood_id:4)
-# BookMood.create(book:sea_of_monsters,mood_id:8)
-# BookMood.create(book:sea_of_monsters,mood_id:5)
+    As a child, Monkey D. Luffy dreamed of becoming King of the Pirates. But his life changed when he accidentally gained the power to stretch like rubber...at the cost of never being able to swim again Years, later, Luffy sets off in search of the "One Piece," said to be the greatest treasure in the world...
+    
+    As a child, Monkey D. Luffy was inspired to become a pirate by listening to the tales of the buccaneer Red-Haired Shanks. But his life changed when Luffy accidentally ate the Gum-Gum Devil Fruit and gained the power to stretch like rubber...at the cost of never being able to swim again Years later, still vowing to become the king of the pirates, Luffy sets out on his adventure...one guy alone in a rowboat, in search of the legendary One Piece, said to be the greatest treasure in the world...',
+    total_pages:216,
+    year_published:1997,
+    ISBN:'9781569319017',
+    cover:'https://cdn.thestorygraph.com/gmwtlwyt79urwm9shl6xkwoijtbr',
+    publisher:'VIZ Media'
+)
+BookGenre.create(book:romance_dawn, genre_id:1)
+BookGenre.create(book:romance_dawn, genre_id:8)
+BookGenre.create(book:romance_dawn, genre:manga)
 
-# puts "🌱 Done seeding"
+BookMood.create(book:romance_dawn,mood_id:1)
+BookMood.create(book:romance_dawn,mood_id:5)
+BookMood.create(book:romance_dawn,mood_id:9)
+
+# id 53
+new_world = Book.create(
+    title:'One Piece, Volume 61: Romance Dawn for the New World',
+    author:'Eiichiro Oda',
+    description:'Determined to become stronger and challenge the toughest seas in the world, Luffy and his crew decide to go into training. When they finally reunite years later, they will meet brand new enemies and adventures!',
+    total_pages:208,
+    year_published:2011,
+    ISBN:'9781421541440',
+    cover:'https://cdn.thestorygraph.com/s6g6ydntrcbb05p1q6zac9am3bfc',
+    publisher:'VIZ Media'
+)
+BookGenre.create(book:new_world, genre_id:1)
+BookGenre.create(book:new_world, genre_id:8)
+BookGenre.create(book:new_world, genre:manga)
+
+BookMood.create(book:new_world,mood_id:1)
+BookMood.create(book:new_world,mood_id:9)
+
+# id 54
+lightning_thief = Book.create(
+    title:'The Lightning Thief',
+    author:'Rick Riordan',
+    description:'Percy Jackson is a good kid, but he can\'t seem to focus on his schoolwork or control his temper. And lately, being away at boarding school is only getting worse - Percy could have sworn his pre-algebra teacher turned into a monster and tried to kill him. When Percy\'s mom finds out, she knows it\'s time that he knew the truth about where he came from, and that he go to the one place he\'ll be safe. ',
+    total_pages:377,
+    year_published:2005,
+    ISBN:'9780786838653',
+    cover:'https://cdn.thestorygraph.com/fiajoj7wx6s7lrobv8qbdfxbtqzf',
+    publisher:'Hyperion'
+)
+BookGenre.create(book:lightning_thief, genre_id:1)
+BookGenre.create(book:lightning_thief, genre_id:8)
+BookGenre.create(book:lightning_thief, genre_id:16)
+
+BookMood.create(book:lightning_thief,mood_id:1)
+BookMood.create(book:lightning_thief,mood_id:9)
+BookMood.create(book:lightning_thief,mood_id:5)
+
+# id 55
+sea_of_monsters = Book.create(
+    title:'The Sea of Monsters',
+    author:'Rick Riordan',
+    description:'Percy Jackson\'s seventh-grade year has been surprisingly quiet. Not a single monster has set foot on his New York prep-school campus. But when an innocent game of dodgeball among Percy and his classmates turns into a death match against an ugly gang of cannibal giants, things got . . . well, ugly. And the unexpected arrival of Percy\'s friend Annabeth brings more bad news: the magical borders that protect Camp Half-Blood have been poisoned by a mysterious enemy, and unless a cure is found, the only safe haven for demigods will be destroyed.',
+    total_pages:279,
+    year_published:2006,
+    ISBN:'9780786856862',
+    cover:'https://cdn.thestorygraph.com/zrls7h0yv4ji2ge8tbw37w9ghuph',
+    publisher:'Disney-Hyperion'
+)
+BookGenre.create(book:sea_of_monsters, genre_id:1)
+BookGenre.create(book:sea_of_monsters, genre_id:8)
+BookGenre.create(book:sea_of_monsters, genre_id:16)
+
+BookMood.create(book:sea_of_monsters,mood_id:1)
+BookMood.create(book:sea_of_monsters,mood_id:9)
+BookMood.create(book:sea_of_monsters,mood_id:5)
+
+# id 56
+labyrinth = Book.create(
+    title:'The Battle of the Labyrinth',
+    author:'Rick Riordan',
+    description:'Percy Jackson isn\'t expecting freshman orientation to be any fun. But when a mysterious mortal acquaintance appears at his potential new school, followed by demon cheerleaders, things quickly move from bad to worse.
+
+    In this fourth installment of the blockbuster series, time is running out as war between the Olympians and the evil Titan lord Kronos draws near. Even the safe haven of Camp Half-Blood grows more vulnerable by the minute as Kronos\'s army prepares to invade its once impenetrable borders. To stop the invasion, Percy and his demigod friends must set out on a quest through the Labyrinth - a sprawling underground world with stunning surprises at every turn.',
+    total_pages:400,
+    year_published:2008,
+    ISBN:'1423101499',
+    cover:'https://cdn.thestorygraph.com/aj051gye0eiqyb29dup0diqwxpv7',
+    publisher:'Disney-Hyperion'
+)
+BookGenre.create(book:labyrinth, genre_id:1)
+BookGenre.create(book:labyrinth, genre_id:8)
+BookGenre.create(book:labyrinth, genre_id:16)
+
+BookMood.create(book:labyrinth,mood_id:1)
+BookMood.create(book:labyrinth,mood_id:4)
+BookMood.create(book:labyrinth,mood_id:8)
+
+# id 57
+last_olympian = Book.create(
+    title:'The Last Olympian',
+    author:'Rick Riordan',
+    description:'While the Olympians struggle to contain the rampaging monster Typhon, Kronos begins his advance on New York City, where Mount Olympus stands virtually unguarded. Now it\'s up to Percy Jackson and an army of young demigods to stop the Lord of Time. 
+
+    In this momentous final book in the New York Times best-selling series, the long-awaited prophecy surrounding Percy\'s sixteenth birthday unfolds. And as the battle for Western civilization rages on the streets of Manhattan, Percy faces a terrifying suspicion that he may be fighting against his own fate.',
+    total_pages:381,
+    year_published:2009,
+    ISBN:'9781423101475',
+    cover:'https://cdn.thestorygraph.com/t53y5no6tvtag6s6z6uqb1ba2aif',
+    publisher:'Disney-Hyperion'
+)
+BookGenre.create(book:last_olympian, genre_id:1)
+BookGenre.create(book:last_olympian, genre_id:8)
+BookGenre.create(book:last_olympian, genre_id:16)
+
+BookMood.create(book:last_olympian,mood_id:1)
+BookMood.create(book:last_olympian,mood_id:4)
+BookMood.create(book:last_olympian,mood_id:8)
+
+# id 58
+piranesi = Book.create(
+    title:'Piranesi',
+    author:'Susanna Clarke',
+    description:'Piranesi\'s house is no ordinary building: its rooms are infinite, its corridors endless, its walls are lined with thousands upon thousands of statues, each one different from all the others. Within the labyrinth of halls an ocean is imprisoned; waves thunder up staircases, rooms are flooded in an instant. But Piranesi is not afraid; he understands the tides as he understands the pattern of the labyrinth itself. He lives to explore the house. 
+    There is one other person in the house--a man called The Other, who visits Piranesi twice a week and asks for help with research into A Great and Secret Knowledge. But as Piranesi explores, evidence emerges of another person, and a terrible truth begins to unravel, revealing a world beyond the one Piranesi has always known. 
+    ',
+    total_pages:245,
+    year_published:2020,
+    ISBN:'9781635575637',
+    cover:'https://cdn.thestorygraph.com/juygsuoykwtq2f17pjvxyz2msnzm',
+    publisher:'Bloomsbury Publishing'
+)
+BookGenre.create(book:piranesi, genre_id:1)
+BookGenre.create(book:piranesi, genre_id:8)
+BookGenre.create(book:piranesi, genre_id:13)
+
+BookMood.create(book:piranesi,mood_id:1)
+BookMood.create(book:piranesi,mood_id:10)
+BookMood.create(book:piranesi,mood_id:11)
+
+# id 59
+rock_paper = Book.create(
+    title:'Rock Paper Scissors',
+    author:'Alice Feeney',
+    description:'Things have been wrong with Mr and Mrs Wright for a long time. When Adam and Amelia win a weekend away to Scotland, it might be just what their marriage needs. Self-confessed workaholic and screenwriter Adam Wright has lived with face blindness his whole life. He can\'t recognize friends or family, or even his own wife.
+    Every anniversary the couple exchange traditional gifts--paper, cotton, pottery, tin--and each year Adam\'s wife writes him a letter that she never lets him read. Until now. They both know this weekend will make or break their marriage, but they didn\'t randomly win this trip. One of them is lying, and someone doesn\'t want them to live happily ever after.',
+    total_pages:304,
+    year_published:2021,
+    ISBN:'9781250266101',
+    cover:'https://cdn.thestorygraph.com/m2uwrcj64yj6zahhfvtjxsv5bxq0',
+    publisher:'Flatiron Books'
+)
+BookGenre.create(book:rock_paper, genre_id:1)
+BookGenre.create(book:rock_paper, genre_id:11)
+BookGenre.create(book:rock_paper, genre_id:14)
+
+BookMood.create(book:rock_paper,mood_id:3)
+BookMood.create(book:rock_paper,mood_id:10)
+BookMood.create(book:rock_paper,mood_id:14)
+
+# id 60
+alaska = Book.create(
+    title:'Looking for Alaska',
+    author:'John Green',
+    description:'Before. Miles “Pudge” Halter is done with his safe life at home. His whole life has been one big non-event, and his obsession with famous last words has only made him crave “the Great Perhaps” even more (Francois Rabelais, poet). He heads off to the sometimes crazy and anything-but-boring world of Culver Creek Boarding School, and his life becomes the opposite of safe. Because down the hall is Alaska Young. The gorgeous, clever, funny, sexy, self-destructive, screwed up, and utterly fascinating Alaska Young. She is an event unto herself. She pulls Pudge into her world, launches him into the Great Perhaps, and steals his heart. Then. . . .
+    After. Nothing is ever the same.',
+    total_pages:234,
+    year_published:2005,
+    ISBN:'9781435249158',
+    cover:'https://cdn.thestorygraph.com/5ce2m9kpxv9xlslpsp1cvp0hl1zo',
+    publisher:'Speak'
+)
+BookGenre.create(book:alaska, genre_id:1)
+BookGenre.create(book:alaska, genre_id:3)
+BookGenre.create(book:alaska, genre_id:2)
+BookGenre.create(book:alaska, genre_id:16)
+
+BookMood.create(book:alaska,mood_id:13)
+BookMood.create(book:alaska,mood_id:4)
+
+# id 61
+katherines = Book.create(
+    title:'An Abundance of Katherines',
+    author:'John Green',
+    description:'On a road trip miles from home, this anagram-happy, washed-up child prodigy has ten thousand dollars in his pocket, a bloodthirsty feral hog on his trail, and an overweight, Judge Judy-loving best friend riding shotgun--but no Katherines. Colin is on a mission to prove The Theorem of Underlying Katherine Predictability, which he hopes will predict the future of any relationship, avenge Dumpees everywhere, and finally win him the girl.
+    Love, friendship, and a dead Austro-Hungarian archduke add up to surprising and heart-changing conclusions in this ingeniously layered comic novel about reinventing oneself.',
+    total_pages:227,
+    year_published:2006,
+    ISBN:'9780525476887',
+    cover:'https://cdn.thestorygraph.com/ge2em78onwp7qc6x3g4as9fyhdbc',
+    publisher:'Dutton Books for Young Readers'
+)
+BookGenre.create(book:katherines, genre_id:1)
+BookGenre.create(book:katherines, genre_id:16)
+BookGenre.create(book:katherines, genre_id:2)
+BookGenre.create(book:katherines, genre_id:3)
+
+BookMood.create(book:katherines,mood_id:9)
+BookMood.create(book:katherines,mood_id:5)
+
+# id 62
+fault_stars = Book.create(
+    title:'The Fault in Our Stars',
+    author:'John Green',
+    description:'Despite the tumor-shrinking medical miracle that has bought her a few years, Hazel has never been anything but terminal, her final chapter inscribed upon diagnosis. But when a gorgeous plot twist named Augustus Waters suddenly appears at Cancer Kid Support Group, Hazel\'s story is about to be completely rewritten.',
+    total_pages:318,
+    year_published:2012,
+    ISBN:'9780142424179',
+    cover:'https://cdn.thestorygraph.com/2216jrwv0j3u514cwy9kbips083b',
+    publisher:'Dutton Books'
+)
+BookGenre.create(book:fault_stars, genre_id:1)
+BookGenre.create(book:fault_stars, genre_id:3)
+BookGenre.create(book:fault_stars, genre_id:2)
+BookGenre.create(book:fault_stars, genre_id:16)
+
+BookMood.create(book:fault_stars,mood_id:13)
+BookMood.create(book:fault_stars,mood_id:4)
+
+# id 63
+paper_towns = Book.create(
+    title:'Paper Towns',
+    author:'John Green',
+    description:'When Margo Roth Spiegelman beckons Quentin Jacobsen in the middle of the night--dressed like a ninja and plotting an ingenious campaign of revenge--he follows her. Margo\'s always planned extravagantly, and, until now, she\'s always planned solo. After a lifetime of loving Margo from afar, things are finally looking up for Q . . . until day breaks and she has vanished. Always an enigma, Margo has now become a mystery. But there are clues. And they\'re for Q.',
+    total_pages:305,
+    year_published:2008,
+    ISBN:'9780142414934',
+    cover:'https://cdn.thestorygraph.com/jv4hbq1uffpvmg1gwl5r12423jxz',
+    publisher:'Speak'
+)
+BookGenre.create(book:paper_towns, genre_id:1)
+BookGenre.create(book:paper_towns, genre_id:3)
+BookGenre.create(book:paper_towns, genre_id:2)
+BookGenre.create(book:paper_towns, genre_id:16)
+
+BookMood.create(book:paper_towns,mood_id:9)
+BookMood.create(book:paper_towns,mood_id:1)
+
+# id 64
+wallflower = Book.create(
+    title:'The Perks of Being a Wallflower',
+    author:'Stephen Chbosky',
+    description:'The critically acclaimed debut novel from Stephen Chbosky, Perks follows observant “wallflower” Charlie as he charts a course through the strange world between adolescence and adulthood. First dates, family drama, and new friends. Sex, drugs, and The Rocky Horror Picture Show. Devastating loss, young love, and life on the fringes. Caught between trying to live his life and trying to run from it, Charlie must learn to navigate those wild and poignant roller-coaster days known as growing up.',
+    total_pages:232,
+    year_published:1999,
+    ISBN:'9781471133466',
+    cover:'https://cdn.thestorygraph.com/1almutrf3gwygpl6xh1lt0hxiy9l',
+    publisher:'Pocket Books'
+)
+BookGenre.create(book:wallflower, genre_id:1)
+BookGenre.create(book:wallflower, genre_id:16)
+BookGenre.create(book:wallflower, genre_id:2)
+
+BookMood.create(book:wallflower,mood_id:11)
+BookMood.create(book:wallflower,mood_id:4)
+BookMood.create(book:wallflower,mood_id:13)
+
+# id 65
+titan_curse = Book.create(
+    title:'The Titan\'s Curse',
+    author:'Rick Riordan',
+    description:'It\'s not everyday you find yourself in combat with a half-lion, half-human. But when you\'re the son of a Greek god, it happens. And now my friend Annabeth is missing, a goddess is in chains and only five half-blood heroes can join the quest to defeat the doomsday monster.
+
+    Oh, and guess what? The Oracle has predicted that not all of us will survive...',
+    total_pages:294,
+    year_published:2007,
+    ISBN:'9780141382890',
+    cover:'https://cdn.thestorygraph.com/476w1uqrkfqeod52mf6lqfz53vk5',
+    publisher:'Puffin Books'
+)
+BookGenre.create(book:titan_curse, genre_id:1)
+BookGenre.create(book:titan_curse, genre_id:8)
+BookGenre.create(book:titan_curse, genre_id:16)
+
+BookMood.create(book:titan_curse,mood_id:1)
+BookMood.create(book:titan_curse,mood_id:5)
+BookMood.create(book:titan_curse,mood_id:6)
+
+# id 66
+curious_incident = Book.create(
+    title:'The Curious Incident of the Dog in the Night-Time',
+    author:'Mark Haddon',
+    description:'Christopher John Francis Boone knows all the countries of the world and their capitals and every prime number up to 7,057. He relates well to animals but has no understanding of human emotions. He cannot stand to be touched. And he detests the color yellow.
+    This improbable story of Christopher\'s quest to investigate the suspicious death of a neighborhood dog makes for one of the most captivating, unusual, and widely heralded novels in recent years.',
+    total_pages:271,
+    year_published:2003,
+    ISBN:'9781400032716',
+    cover:'https://cdn.thestorygraph.com/b9es2g68wk1826v02vunnqj00tqv',
+    publisher:'Vintage'
+)
+BookGenre.create(book:curious_incident, genre_id:1)
+BookGenre.create(book:curious_incident, genre_id:2)
+BookGenre.create(book:curious_incident, genre_id:11)
+BookGenre.create(book:curious_incident, genre_id:16)
+
+BookMood.create(book:curious_incident,mood_id:4)
+BookMood.create(book:curious_incident,mood_id:11)
+
+# id 67
+watchmen = Book.create(
+    title:'Watchmen',
+    author:'Alan Moore',
+    description:'It all begins with the paranoid delusions of a half-insane hero called Rorschach. But is Rorschach really insane or has he in fact uncovered a plot to murder super-heroes and, even worse, millions of innocent civilians? On the run from the law, Rorschach reunites with his former teammates in a desperate attempt to save the world and their lives, but what they uncover will shock them to their very core and change the face of the planet! Following two generations of masked superheroes from the close of World War II to the icy shadow of the Cold War comes this groundbreaking comic story — the story of The Watchmen.',
+    total_pages:416,
+    year_published:1987,
+    ISBN:'9780930289232',
+    cover:'https://cdn.thestorygraph.com/lx2w2glucpnizxf1tcdx2nuug8u0',
+    publisher:'DC Comics'
+)
+BookGenre.create(book:watchmen, genre_id:1)
+BookGenre.create(book:watchmen, genre_id:22)
+BookGenre.create(book:watchmen, genre_id:24)
+BookGenre.create(book:watchmen, genre_id:11)
+BookGenre.create(book:watchmen, genre_id:10)
+
+BookMood.create(book:watchmen,mood_id:1)
+BookMood.create(book:watchmen,mood_id:3)
+BookMood.create(book:watchmen,mood_id:10)
+
+# id 68
+etranger = Book.create(
+    title:'The Stranger',
+    author:'Albert Camus',
+    description:'Since it was first published in English, in 1946, Albert Camus\'s first novel, The Stranger (L\'étranger), has had a profound impact on millions of American readers. Through this story of an ordinary man who unwittingly gets drawn into a senseless murder on a sundrenched Algerian beach, Camus explored what he termed \'the nakedness of man faced with the absurd\'. ',
+    total_pages:123,
+    year_published:1942,
+    ISBN:'9780881032475',
+    cover:'https://cdn.thestorygraph.com/ci2uazuhytmmrcgo3tzu8wr0eiz3',
+    publisher:'Turtleback Books'
+)
+BookGenre.create(book:etranger, genre_id:1)
+BookGenre.create(book:etranger, genre_id:13)
+BookGenre.create(book:etranger, genre_id:23)
+
+BookMood.create(book:etranger,mood_id:3)
+BookMood.create(book:etranger,mood_id:11)
+
+# id 69
+orient_express = Book.create(
+    title:'Murder on the Orient Express',
+    author:'Agatha Christie',
+    description:'Just after midnight, a snowdrift stops the Orient Express in its tracks. The luxurious train is surprisingly full for the time of the year, but by the morning it is one passenger fewer. An American tycoon lies dead in his compartment, stabbed a dozen times, his door locked from the inside.
+    Isolated and with a killer in their midst, detective Hercule Poirot must identify the murderer - in case he or she decides to strike again.',
+    total_pages:274,
+    year_published:1934,
+    ISBN:'9780007119318',
+    cover:'https://cdn.thestorygraph.com/a4dn7xmq7tg4mhn1k4qq27r829px',
+    publisher:'Harper-Collins'
+)
+BookGenre.create(book:orient_express, genre_id:1)
+BookGenre.create(book:orient_express, genre_id:23)
+BookGenre.create(book:orient_express, genre_id:22)
+BookGenre.create(book:orient_express, genre_id:11)
+
+BookMood.create(book:orient_express,mood_id:10)
+BookMood.create(book:orient_express,mood_id:1)
+
+# id 70
+hunger_games = Book.create(
+    title:'The Hunger Games',
+    author:'Suzanne Collins',
+    description:'Katniss is a 16-year-old girl living with her mother and younger sister in the poorest district of Panem, the remains of what used to be the United States. Long ago the districts waged war on the Capitol and were defeated. As part of the surrender terms, each district agreed to send one boy and one girl to appear in an annual televised event called "The Hunger Games." The terrain, rules, and level of audience participation may change but one thing is constant: kill or be killed. When Kat\'s sister is chosen by lottery, Kat steps up to go in her place. Without really meaning to, Katniss becomes a contender. But if she is to win, she will have to start making choices that weigh survival against humanity and life against love.',
+    total_pages:374,
+    year_published:2008,
+    ISBN:'9780439023481',
+    cover:'https://cdn.thestorygraph.com/92nwyf94z4mcdp30e9ks17grftry',
+    publisher:'Scholastic Inc.'
+)
+BookGenre.create(book:hunger_games, genre_id:1)
+BookGenre.create(book:hunger_games, genre_id:19)
+BookGenre.create(book:hunger_games, genre_id:10)
+BookGenre.create(book:hunger_games, genre_id:16)
+
+BookMood.create(book:hunger_games,mood_id:14)
+BookMood.create(book:hunger_games,mood_id:3)
+BookMood.create(book:hunger_games,mood_id:1)
+
+puts "🌱 Done seeding"
