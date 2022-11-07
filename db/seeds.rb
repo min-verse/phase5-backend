@@ -1169,4 +1169,25 @@
 
 # Reading.create(user_id:5, book:twilight, status:'reading', pages_read:139)
 
+# # id 52
+# sea_of_monsters = Book.create(
+#     title:'',
+#     author:'',
+#     description:'',
+#     total_pages:0,
+#     year_published:2005,
+#     ISBN:'',
+#     cover:'',
+#     publisher:''
+# )
+# BookGenre.create(book:sea_of_monsters, genre_id:1)
+# BookGenre.create(book:sea_of_monsters, genre_id:8)
+# BookGenre.create(book:sea_of_monsters, genre_id:2)
+# BookGenre.create(book:sea_of_monsters, genre_id:24)
+
+# BookMood.create(book:sea_of_monsters,mood_id:1)
+# BookMood.create(book:sea_of_monsters,mood_id:4)
+# BookMood.create(book:sea_of_monsters,mood_id:8)
+# BookMood.create(book:sea_of_monsters,mood_id:5)
+
 # puts "🌱 Done seeding"

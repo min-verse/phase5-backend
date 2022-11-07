@@ -20,8 +20,8 @@ class BooksController < ApplicationController
     def example_search
         results = Book.book_lookup(params[:title_search], params[:author_search])
         example = results["items"].map do |item|
-            
+            Book.add_result(item['volumeInfo'])
         end
-        render json: example
+        render json: example, status: :ok
     end
 end

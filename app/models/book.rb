@@ -51,11 +51,30 @@ class Book < ApplicationRecord
         title = volume_info['title']
         author = volume_info['authors'][0]
         desc = volume_info['description'] ? volume_info['description'] : volumeInfo['infoLink']
-        total_pages = volume_info['pageCount']
-        year_published = volume_info['publishedDate']
+        total_pages = volume_info['pageCount'].to_i
+        year_published = volume_info['publishedDate'].slice(0,4).to_i
         cover = "https://covers.openlibrary.org/b/isbn/#{isbn}-L.jpg"
         publisher = volume_info['publisher']
-        
+        example_book = Book.create(
+            title:title,
+            author:author,
+            description:desc,
+            total_pages:total_pages,
+            year_published:year_published,
+            ISBN:isbn,
+            cover:cover,
+            publisher:publisher
+        )
+
+        BookGenre.create(book:example_book,genre_id:1)
+        BookGenre.create(book:example_book,genre_id:2)
+        BookGenre.create(book:example_book,genre_id:8)
+        BookGenre.create(book:example_book,genre_id:24)
+
+        BookMood.create(book:example_book,mood_id:1)
+        BookMood.create(book:example_book,mood_id:4)
+        BookMood.create(book:example_book,mood_id:8)
+        BookMood.create(book:example_book,mood_id:5)
     end
 
 end
