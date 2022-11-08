@@ -1,5 +1,5 @@
 class FriendSerializer < ActiveModel::Serializer
-    attributes :id, :username, :friends, :to_reads, :readings, :posts, :completed, :posts, :genres, :moods
+    attributes :id, :avatar, :username, :friends, :to_reads, :readings, :posts, :completed, :posts, :genres, :moods
 
     def username
         self.object.username

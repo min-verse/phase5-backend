@@ -1,5 +1,5 @@
 class ReaderSerializer < ActiveModel::Serializer
-    attributes :id, :username, :to_reads, :completed
+    attributes :id, :avatar, :username, :to_reads, :completed
 
     def username
         self.object.username

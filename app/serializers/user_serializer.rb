@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :email, :username, :pendings, :outgoings, :friends, :genres, :moods, :created_at
+  attributes :id, :avatar, :email, :username, :pendings, :outgoings, :friends, :genres, :moods, :created_at
 
   has_many :readings, dependent: :destroy
   has_many :books, through: :readings
@@ -16,7 +16,7 @@ class UserSerializer < ActiveModel::Serializer
 
   def outgoings
     Friendship.where(user_id:self.object.id).where(status:"pending").map do |item|
-      {friend: item.friend, books:item.user.books}
+      {friend: item.friend, books:item.friend.books}
     end
   end
 

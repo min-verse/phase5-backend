@@ -5,7 +5,10 @@ class FriendshipsController < ApplicationController
         friend = User.find_by!(id: params[:id])
         new_friendship = current_user.friendships.build(friend_id:friend.id, status:'pending').save
         if new_friendship
-            render json: current_user.friendships.where(status:'pending'), status: :ok
+            current_outgoings = Friendship.where(user:current_user).where(status:'pending').map do |item|
+                    {friend: item.friend, books:item.friend.books}
+            end
+            render json: current_outgoings, status: :ok
         else
             render json: {error: "Not able to send friend request"}, status: :unprocessable_entity
         end

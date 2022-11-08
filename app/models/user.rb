@@ -16,7 +16,11 @@ class User < ApplicationRecord
 
   has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
+  after_initialize :set_defaults, unless: :persisted?
 
+  def set_defaults
+      self.avatar ||= 'https://i.imgur.com/KhYI6SH.jpg'
+  end
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     validates :username, presence: true, 
                   uniqueness: {case_sensitive: false},
